@@ -1,0 +1,1175 @@
+/*
+
+File Name: style.less
+Date: 02/16/20
+Programmer: Gray Mros
+
+*/
+
+/* MOBILE STYLESHEET */
+
+@import 'palette.less';
+@import 'mixins.less';
+
+/* 
+Google Fonts 
+font-family: 'Mirza', cursive;
+font-family: 'Open Sans', sans-serif;
+
+Color Palette
+https://coolors.co/ff740a-471e00-e0d2be-3c5400-2b2926
+*/
+
+
+/*
+
+******* Images *******
+Recommended file type: 
+PNG for images with lots of text.
+JPG for photographs of food.
+
+Minimum image dimensions:
+For images that will be stretching across the whole screen, a width of 1600px will be good, even 2000px.
+Height should be at least 500px.
+
+**** Which images are which? ****
+
+
+******** Header image at top of page ********
+    header {
+            background-image: linear-gradient(to right bottom, rgba(185, 185, 185, 0.1), rgba(43, 43, 43, 0.1)), url(../images/burrito-2.jpg);
+    }
+
+
+******** Introduction paragraph image ********
+    main {
+        aside {
+               background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.85), rgba(44, 44, 44, 0.85)), url(../images/spices.jpg);
+        }
+    }
+
+
+******** Ingredients list background image ********
+
+    section {
+            background-image: linear-gradient(to right bottom, rgba(252, 224, 193, 0.7), rgba(252, 224, 193, 0.7)), url(../images/cutting-board.jpg);
+    }
+
+
+
+******** Images at the top of each of the 4 sections ********
+    section {
+        &:first-of-type {
+            div {
+                background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.3), rgba(44, 44, 44, 0.3)), url(../images/tortillas.jpg);
+            }
+        }
+    }
+
+    AND
+
+    section {
+        &:nth-of-type(2) {
+            div {
+                background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.3), rgba(44, 44, 44, 0.3)), url(../images/grill-meat-fire.jpg);
+            }
+        }
+    }
+
+    AND
+
+    section {
+        &:nth-of-type(3) {
+            div {
+                background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.3), rgba(44, 44, 44, 0.3)), url(../images/rice-plate.jpg);
+            }
+        }
+    }
+
+    AND
+
+    section {
+        &:nth-of-type(4) {
+            div {
+                background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.3), rgba(44, 44, 44, 0.3)), url(../images/bigveges.jpg);
+            }
+        }
+    }
+
+********  To delete one of these images *********
+Simply select the entire line of style, beginning with background-image, and ending at the semi-colon ';' and delete it.
+ **here** background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.3), rgba(44, 44, 44, 0.3)), url(../images/bigveges.jpg); **to here**
+
+
+
+******** To change an image *********
+First place your desired image into the images folder. Then go to to the tag whose image you wish to change.
+At the end of the the style property 'background-image,' within the url(), enter the name of your image file following 'images/'.
+        For example, to change the image from rice-plate.jpg to tortillas.jpg, the code would change like so:
+            url(../images/rice-plate.jpg); ----------> url(../images/tortillas.jpg);
+
+
+
+******** To change the background-image color gradient ********
+You may have noticed all or some of these background images look as though they're lightened or darkened with color. This is because of
+the first value on the background-image propety, 'linear-gradient(to right bottom, rgba(),rgba()).' 
+
+Linear-gradient takes several colors and transitions between one color to the next across the screen. 
+The direction that the colors flow depends on the first values given, in the example above,
+the transition happens in the direction of the bottom right side of the background. 
+Other direction values can be found on https://www.w3schools.com/howto/. 
+The next values determine the colors that will be joined. RGBA stands for Red, Green, Blue, Alpha. The alpha determines
+the opacity of the color. There are many color picking tools available online, here's one site https://www.hexcolortool.com/.
+You can copy your RGBA values and paste them into the code here to change the color.
+
+
+
+******** To remove background-image color gradient ********
+You can also delete the linear-gradient value entirely, removing everything except the image url().
+For more ways to customize the background-image property, visit this link: https://www.w3schools.com/cssref/pr_background-image.asp 
+------------------------------
+
+*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-image: linear-gradient(to right bottom, rgba(185, 185, 185, 0.1), rgba(43, 43, 43, 0.1)), url(../images/burrito-2.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height: 100vh;
+    background-position: center;
+
+    div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: @fadeColor5;
+
+        h1 {
+            color: @color1;
+            font-size: 17vw;
+            font-weight: bolder;
+            width: 100%;
+            font-family: 'Mirza', cursive;
+        }
+
+        p {
+            /* Smaller text under page title */
+            display: block;
+            color: @color4;
+            font-size: 5vw;
+
+            span {
+                display: block;
+                padding-bottom: .2rem;
+
+                &:last-of-type {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+main {
+
+    aside {
+        padding: 1rem 0;
+        background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.85), rgba(44, 44, 44, 0.85)), url(../images/spices.jpg);
+        background-size: cover;
+        text-align: left;
+        background-position: center;
+        height: 120vh;
+        position: relative;
+        border-top: .3rem solid @darkColor;
+
+        p {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 98%;
+            letter-spacing: .03rem;
+            font-size: 1.3rem;
+            line-height: 3rem;
+            font-weight: bold;
+            color: @color4;
+
+            &:nth-of-type(2) {
+                /* This <p> is only displayed on larger devices*/
+                display: none;
+            }
+
+            span:first-of-type {
+                /*Styling specific words within the paragraph*/
+                font-family: 'Mirza', cursive;
+                font-size: 2.6rem;
+                padding-bottom: 3rem;
+                padding-left: .5rem;
+                line-height: 2.5rem;
+                display: inline-block;
+
+                span {
+                    color: @color1;
+                    font-size: 3rem;
+                    font-weight: bolder;
+                    width: 100%;
+                    line-height: 1.7rem;
+                    padding-bottom: 0;
+                    padding-left: 0;
+                }
+            }
+
+            span:nth-of-type(2) {
+                display: inline-block;
+                padding-bottom: 3rem;
+                padding-left: .5rem;
+                width: 90%;
+                text-align: left;
+            }
+
+            span:nth-of-type(3) {
+                display: inline-block;
+                padding-left: .5rem;
+                width: 90%;
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+section {
+    text-align: center;
+    background-image: linear-gradient(to right bottom, rgba(252, 224, 193, 0.7), rgba(252, 224, 193, 0.7)), url(../images/cutting-board.jpg);
+    padding-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+
+    h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        font-size: 4rem;
+        letter-spacing: .05rem;
+        color: @color4;
+        font-weight: 100;
+    }
+
+    h3 {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        color: #3C5400;
+        font-family: 'Mirza', cursive;
+        font-weight: 100;
+        text-align: center;
+
+        /*Style of text displayed below the main H3 text*/
+        span {
+            display: inline-block;
+            font-size: 1rem;
+            line-height: .2rem;
+            padding-left: 0;
+            color: @darkColor;
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            font-weight: 600;
+            width: 100%;
+        }
+    }
+
+    /*This contains the image of each menu section*/
+    div {
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        height: 60vh;
+        position: relative;
+        border-top: .3rem solid @darkColor;
+    }
+
+    p {
+        font-size: .7rem;
+    }
+
+    ul {
+        padding: 2rem 0;
+    }
+
+    li {
+        /* Style of ingredient items */
+        color: @color2;
+        padding-left: 1rem;
+        line-height: 2rem;
+        font-size: 1.3rem;
+        letter-spacing: .09rem;
+        font-weight: 300;
+        text-align: left;
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+
+        &:not(last-of-type) {
+            padding-bottom: 4rem;
+        }
+    }
+
+    span {
+        /*Used to style the ' | 's before each list item in the under 560px width view*/
+        color: @color2;
+        padding-left: 1rem;
+        line-height: 2rem;
+        font-size: 1.5rem;
+        letter-spacing: .07rem;
+        font-weight: 700;
+        text-align: left;
+    }
+}
+
+li {
+    span {
+
+        /*Style for the list items that have added information in span tags*/
+        &:nth-of-type(2) {
+            display: block;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1rem;
+            color: @darkColor;
+            border-left: 2.4rem solid transparent;
+            /* Using a transparent border instead of padding to overcome a bug found in my phone's Safari browser*/
+        }
+    }
+}
+
+
+section {
+    &:first-of-type {
+        div {
+            background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.3), rgba(44, 44, 44, 0.3)), url(../images/tortillas.jpg);
+        }
+
+        li {
+            &:last-of-type {
+                padding-bottom: 2rem;
+
+                span {
+
+                    /*Make the span in the first section display inline*/
+                    &:nth-of-type(2) {
+                        display: inline;
+                        padding-left: 0;
+                        border-left: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section {
+    &:nth-of-type(2) {
+        div {
+            background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.1), rgba(44, 44, 44, 0.2)), url(../images/grill-meat-fire.jpg);
+        }
+    }
+}
+
+section {
+    &:nth-of-type(3) {
+        div {
+            background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.2), rgba(44, 44, 44, 0.1)), url(../images/rice-plate.jpg);
+        }
+    }
+}
+
+section {
+    &:nth-of-type(4) {
+        div {
+            background-image: linear-gradient(to right bottom, rgba(26, 22, 21, 0.2), rgba(44, 44, 44, 0.1)), url(../images/bigveges.jpg);
+        }
+    }
+}
+
+
+footer {
+    text-align: center;
+    background-color: @color2;
+    background-size: cover;
+    background-position: center;
+}
+
+footer {
+    div {
+        p {
+            /*Style for the Hours and Phone number*/
+            padding: 2rem 0;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            font-weight: 100;
+            font-family: 'Mirza', cursive;
+            color: @color4;
+
+            span {
+                display: block;
+            }
+
+            a {
+                font-family: 'Open Sans', sans-serif;
+                color: @color1;
+            }
+        }
+    }
+}
+
+footer {
+    p {
+        /*Style for copyright*/
+        color: @color4;
+        font-size: .75rem;
+        padding-bottom: .3rem;
+
+    }
+}
+
+footer {
+    aside {
+        padding: 1rem .8rem;
+
+        button {
+            /*Style for address*/
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            padding-top: .4rem;
+
+            a {
+                font-size: 1.5rem;
+                text-decoration: none;
+                color: @color1;
+                font-style: italic;
+                font-family: 'Mirza', cursive;
+
+                &:active {
+                    color: @lightColor;
+                }
+            }
+        }
+
+        /*Style for the Google Maps API container*/
+        div {
+            width: 100%;
+            height: 50vh;
+        }
+    }
+
+}
+
+footer {
+
+    /*Style for social media section*/
+    aside {
+        &:nth-of-type(2) {
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+
+            h4 {
+                color: @color4;
+                font-size: 2rem;
+            }
+
+            ul {
+                padding-top: 1rem;
+                display: block;
+
+                li {
+                    display: inline-block;
+
+                    a {
+                        padding: .8rem;
+
+                        i {
+                            color: @color1;
+                            font-size: 2.4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Devices over 560px width                                                                                      
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+@media only screen and (min-width: 560px) {
+    header {
+        div:first-of-type {
+            h1 {
+                font-size: 13vw;
+
+            }
+
+            p {
+                font-size: 3.8vw;
+            }
+        }
+    }
+
+    main {
+        aside {
+            /*Intro section*/
+            text-align: center;
+            height: 100vh;
+
+            p {
+                span:nth-of-type(2) {
+                    padding-left: 0;
+                    text-align: center;
+                }
+
+                span:nth-of-type(3) {
+                    padding-left: 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    section {
+        h2 {
+            font-size: 7rem;
+        }
+
+        h3 {
+            font-size: 3rem;
+        }
+
+        div {
+            height: 90vh;
+        }
+
+        p {
+            font-size: .7rem;
+        }
+
+        ul {
+            padding: 4rem 0 0 0;
+            text-align: center;
+        }
+
+        li {
+            text-align: center;
+            padding: 0;
+            padding-bottom: 4rem;
+            margin: 0;
+            font-size: 1.3rem;
+
+            span {
+                /*Hide the ' | 's before the list items in devices above 559px*/
+                display: none;
+
+                &:nth-of-type(2) {
+                    display: block;
+                    font-size: 1rem;
+                    text-align: center;
+                    padding-left: 0;
+                    left: inherit;
+                }
+            }
+        }
+    }
+
+    section {
+
+        &:nth-of-type(1) {
+            ul {
+                /*Organizing all the ingredient unordered lists into grids*/
+                padding-bottom: 2rem;
+                display: grid;
+                grid-template-columns: 20% 1fr 1fr 20%;
+
+                li {
+                    &:nth-of-type(1) {
+                        display: inline-block;
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    &:nth-of-type(2) {
+                        display: inline-block;
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                    }
+
+                    span {
+                        &:nth-of-type(2) {
+                            /*Prefer the first section's list item span display inline, as opposed to block*/
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+        &:nth-of-type(2) {
+            ul {
+                display: grid;
+                grid-template-columns: 15% 1fr 1fr 15%;
+
+                li {
+                    &:nth-of-type(odd) {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    &:nth-of-type(even) {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                    }
+                }
+            }
+
+        }
+    }
+
+    section {
+
+        &:nth-of-type(3) {
+            ul {
+                display: grid;
+                grid-template-columns: 20% 1fr 1fr 20%;
+
+                li {
+                    &:nth-of-type(odd) {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    &:nth-of-type(even) {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+        &:nth-of-type(4) {
+            ul {
+                display: grid;
+                grid-template-columns: 5% 29% 29% 29% 5%;
+                grid-column-gap: 1rem;
+
+                li {
+
+                    &:nth-of-type(1),
+                    &:nth-of-type(4),
+                    &:nth-of-type(7),
+                    &:nth-of-type(10) {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    &:nth-of-type(2),
+                    &:nth-of-type(5),
+                    &:nth-of-type(8),
+                    &:nth-of-type(11) {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                    }
+
+                    &:nth-of-type(3),
+                    &:nth-of-type(6),
+                    &:nth-of-type(9) {
+                        grid-column-start: 4;
+                        grid-column-end: 5;
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    footer {
+        text-align: center;
+        background-color: @color2;
+        background-size: cover;
+        background-position: center;
+    }
+
+    footer {
+        div {
+            p {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    footer {
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    footer {
+        aside {
+
+            /*Google Maps API*/
+            div {
+                width: 80vw;
+                height: 60vh;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    footer {
+        aside {
+
+            /*Social media*/
+            &:nth-of-type(2) {
+                padding-top: 3rem;
+
+                ul {
+                    padding-top: 2rem;
+
+                    li {
+                        a {
+                            padding: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Devices over 975px width                                                                                      
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+@media only screen and (min-width: 975px) {
+
+
+    header {
+        div:first-of-type {
+            h1 {
+                font-size: 10vw;
+            }
+
+            p {
+                font-size: 2vw;
+            }
+        }
+    }
+
+    main {
+        aside {
+            text-align: center;
+            height: 90vh;
+
+            p {
+                width: 60%;
+
+                &:nth-of-type(1) {
+                    /*Switching which paragraph gets displayed*/
+                    display: none
+                }
+
+                &:nth-of-type(2) {
+                    display: block;
+
+                    /* This paragraph gets displayed now */
+                    span:first-of-type {
+                        font-size: 3rem;
+                        line-height: 3rem;
+                        padding-bottom: 1rem;
+
+                        span {
+                            font-size: 5rem;
+                        }
+                    }
+
+                    span:nth-of-type(2) {
+                        text-align: center;
+                        font-size: 1.6rem;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+        h3 {
+            font-size: 3rem;
+        }
+
+        div {
+            height: 80vh;
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+
+        ul {
+            padding-bottom: 7rem;
+            padding-top: 5rem;
+        }
+
+        li {
+            line-height: 3rem;
+            padding: 0;
+            font-size: 1.5rem;
+        }
+
+        span {
+
+            &:nth-of-type(1) {
+                padding-top: 1rem;
+                font-size: 1rem;
+            }
+
+            &:nth-of-type(2) {
+                font-size: .7rem;
+            }
+
+            &:nth-of-type(3) {
+                font-size: .8rem;
+                text-align: center;
+            }
+        }
+    }
+
+    section {
+
+        &:nth-of-type(1) {
+            ul {
+                /*Adjusting the grid layouts of all sections*/
+                display: grid;
+                grid-template-columns: 25% 1fr 1fr 25%;
+                grid-template-rows: 1fr 1fr 1fr;
+                column-gap: 2fr;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                li {
+                    &:nth-of-type(odd) {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                    }
+
+                    &:nth-of-type(even) {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                    }
+                }
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    section {
+        &:nth-of-type(2) {
+            ul {
+                display: grid;
+                grid-template-columns: 10% 1fr 1fr 1fr 10%;
+                grid-row-gap: 4rem;
+
+                li {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+
+                    &:nth-of-type(1),
+                    &:nth-of-type(4) {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    &:nth-of-type(2),
+                    &:nth-of-type(5) {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                    }
+
+                    &:nth-of-type(3),
+                    &:nth-of-type(6) {
+                        grid-column-start: 4;
+                        grid-column-end: 5;
+                    }
+
+                    span {
+                        &:nth-of-type(3) {
+                            text-align: center;
+                        }
+                    }
+
+                    &:nth-of-type(5) {
+                        span {
+                            &:nth-of-type(3) {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+
+        &:nth-of-type(3) {
+            ul {
+                display: grid;
+                grid-template-columns: 5% 1fr 1fr 1fr 1fr 5%;
+
+                li {
+                    &:nth-of-type(1) {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    &:nth-of-type(2) {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                    }
+
+                    &:nth-of-type(3) {
+                        grid-column-start: 4;
+                        grid-column-end: 5;
+                    }
+
+                    &:nth-of-type(4) {
+                        grid-column-start: 5;
+                        grid-column-end: 6;
+                    }
+
+                }
+            }
+        }
+    }
+
+    section {
+        &:nth-of-type(4) {
+            ul {
+                display: grid;
+                grid-template-columns: 5% 1fr 1fr 1fr 5%;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+                li {
+
+                    &:nth-of-type(1),
+                    &:nth-of-type(2),
+                    &:nth-of-type(3),
+                    &:nth-of-type(4) {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    &:nth-of-type(5),
+                    &:nth-of-type(6) {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                    }
+
+                    &:nth-of-type(7),
+                    &:nth-of-type(8),
+                    &:nth-of-type(9),
+                    &:nth-of-type(10),
+                    &:nth-of-type(11) {
+                        grid-column-start: 4;
+                        grid-column-end: 5;
+                    }
+
+                    &:nth-of-type(1),
+                    &:nth-of-type(5),
+                    &:nth-of-type(7) {
+                        grid-row-start: 1;
+                        grid-row-end: 2;
+                    }
+
+                    &:nth-of-type(2),
+                    &:nth-of-type(6),
+                    &:nth-of-type(8) {
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                    }
+
+                    &:nth-of-type(3),
+                    &:nth-of-type(9) {
+                        grid-row-start: 3;
+                        grid-row-end: 4;
+                    }
+
+                    &:nth-of-type(4),
+                    &:nth-of-type(10) {
+                        grid-row-start: 4;
+                        grid-row-end: 5;
+                    }
+
+                    &:nth-of-type(11) {
+                        grid-row-start: 5;
+                        grid-row-end: 6;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        /*Formatting the footer into a grid layout*/
+        display: grid;
+        grid-template-columns: 1fr 3fr 3fr 1fr;
+
+        div {
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            p {
+                &:nth-of-type(1) {
+                    display: block;
+                    font-size: 2.6rem;
+                    line-height: 3rem;
+                    padding-top: 2rem;
+                }
+
+                &:nth-of-type(2) {
+                    display: block;
+                    font-size: 2rem;
+                    line-height: 3rem;
+                }
+            }
+        }
+
+        aside {
+            grid-column-start: 3;
+            grid-column-end: 4;
+                /*Google Maps API*/
+            div {
+                width: 90%;
+                height: 50vh;
+            }
+
+            &:nth-of-type(2) {
+                /*Social media area*/
+                border-top: 2px solid @color4;
+                grid-column-start: 2;
+                grid-column-end: 4;
+            }
+        }
+
+        p {
+            /*Copyright*/
+            grid-column-start: 1;
+            grid-column-end: 5;
+            font-size: 1rem;
+        }
+    }
+
+}
+
+/* Devices over 1249px width                                                                                      
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+@media only screen and (min-width: 1249px) {
+
+
+    main {
+        aside {
+            height: 80vh;
+        }
+    }
+
+    section {
+        ul {
+            li {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    /*Small tweaks to all of the section's grid layouts*/
+    section {
+
+        &:nth-of-type(1) {
+            ul {
+                grid-template-columns: 30% 1fr 1fr 30%;
+            }
+        }
+    }
+
+    section {
+        &:nth-of-type(2) {
+            ul {
+                grid-template-columns: 20% 1fr 1fr 1fr 20%;
+
+            }
+        }
+    }
+
+    section {
+
+        &:nth-of-type(3) {
+            ul {
+                grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
+            }
+        }
+    }
+
+    section {
+        &:nth-of-type(4) {
+            ul {
+                grid-template-columns: 15% 1fr 1fr 1fr 15%;
+
+            }
+        }
+    }
+}

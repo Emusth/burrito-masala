@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="author" content="Gray Mros">
+
+    <title>Burrito Masala</title>
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Judson|Lustria|Marcellus|Mirza|Open+Sans|Scheherazade&display=swap"
+        rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/helper.css" rel="stylesheet" type="text/css">
+    <link href="css/grid.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/dfee4bf98b.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+
+    <!-- TO ADD INGREDIENTS: 
+
+    ******** To add an ingredient to a section ********
+    
+    First create the list item tags: <li></li>
+    Second create the span tags within the list item tags: <li><span></span></li>
+    Third copy the following code and insert it between the span tags: &#10072;&nbsp;&nbsp;
+            The code should look like this: <li><span>&#10072;&nbsp;&nbsp;</span></li>
+    Fourth write the ingredient name AFTER the CLOSING span tag, BEFORE the CLOSING list item tag
+            The code should look like this: <li><span>&#10072;&nbsp;&nbsp;</span>Ingredient Name</li>
+    
+    Note: This line of code must be placed within the established unordered list tags <ul></ul>
+            The finished code should look like this: 
+                                            <ul> 
+                                                <li>
+                                                    <span>&#10072;&nbsp;&nbsp;</span>Ingredient
+                                                </li> 
+                                            </ul>
+    
+    ******** To add extra detail following the ingredient name ********
+    
+    First add an additional span tag following the ingredient name. Be sure to add one space between the 
+    ingredient name and the span tag.
+            That section of code should look like this: <span>&#10072;&nbsp;&nbsp;</span>Ingredient <span><span>
+    Second add the extra detail within that additional span tag,
+            That section of code should look like this: <span>&#10072;&nbsp;&nbsp;</span>Ingredient <span>(Additional Detail)<span>
+            The finished code should look like this:
+                                            <ul> 
+                                                <li>
+                                                    <span>&#10072;&nbsp;&nbsp;</span>Ingredient <span>(Additional Detail)<span>
+                                                </li> 
+                                            </ul>
+                    
+    ******** To delete an ingredient from a section ********
+    Simply use the mouse to select that ingredient's surrounding tags list item and span tags, starting with the opening list item tag, <li>, and finishing with 
+    the closing list item tag, </li>. Once that's all selected, delete it, and save the file. The ingredient is now deleted.                                          
+-->
+
+<!--
+    ******** To change images ********
+    All images are currently being displayed with CSS. To access and change them, go to the style.less file. 
+-->
+
+    <header>
+        <div>
+            <h1>Burrito Masala</h1>
+            <p><span>Food Cart - Indian - Mexican</span></p>
+        </div>
+    </header>
+    <main>
+        <aside>
+            <!-- First <p> displays up to 559px in width -->
+            <p><span>The <span>Burrito Masala</span> Food Cart</span> <span>Proudly serving Indian and
+                    Mexican flavors in a burrito or
+                    bowl, customized to your liking.</span> <span>Prepared
+                    by our James Beard Award winning
+                    chefs.</span></p>
+            <!-- Second <p> displays after 559px in width -->
+            <p><span>The <span>Burrito Masala</span> Food Cart</span> <span>Proudly serving Indian and
+                    Mexican flavors in a burrito or
+                    bowl, customized to your liking. Prepared
+                    by our James Beard Award winning
+                    chefs.</span></p>
+        </aside>
+        <section>
+            <!--Div used to help style child element and has the background-image porperty set -->
+            <div>
+                <h2>How It Works</h2>
+            </div>
+            <h3>1. Choose Your Base</h3>
+            <ul>
+                <li>
+                    <!-- First span tags only displays under 560px -->
+                    <span>&#10072;&nbsp;&nbsp;</span>Burrito
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Bowl
+                    <span>(gf&#42;)</span>
+                </li>
+            </ul>
+            <p>gf&#42; - gluten free | v&#42; - vegan | veg&#42; - vegetarian</p>
+        </section>
+        <section>
+            <div>
+                <!--Div serves the same function as in the section above, but I decided to take out the <h2> tag for now, as I liked the look better. Background-image is still attached to the Div -->
+            </div>
+            <h3>2. Add a Filling <span>( Choose one )</span></h3>
+            <ul>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Chicken Tikka Masala
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Pork in Salsa Verde
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Lamb Curry
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Aloo Gobi Masala
+                    <span>(Potato &amp; Cauliflower, v&#42;)</span>
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Sambar
+                    <span>(Lentil Curry, v&#42;)</span>
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Chile Relleno
+                    <span>(Contains Cheese, veg&#42;)</span>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div>
+            </div>
+            <h3>3. Add Rice <span>( Choose one )</span></h3>
+            <ul>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Kerala Biryani
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Spanish Rice
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>White Rice
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Brown Rice
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div>
+            </div>
+            <h3>4. Add Any Topping<span>( Unlimited )</span></h3>
+            <ul>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Mango Chutney
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Tomatillo Salsa
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Raita
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Red
+                    Salsa
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Cheese
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Sour Cream
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Onions
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Tomatoes
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Cucumbers
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Cilantro
+                </li>
+                <li>
+                    <span>&#10072;&nbsp;&nbsp;</span>Guacamole
+                    <span>($.75 extra)</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <p>Open 11:00am - 7:00pm<span>7 Days A Week</span></p>
+            <p><a href="tel:+5035555555"> (503) 555-5555</a><span>
+                    Call or Text Order</span></p>
+        </div>
+        <aside>
+            <!--Button's href is a link to Burrito Masala's location in Google Maps-->
+            <button><a href="https://goo.gl/maps/oK2N9dNrdRzDehAe9">SW 3rd and Alder, Portland, Or</a></button>
+            <!--This div uses the Google Maps API to display a map of Burrito Masala's location-->
+            <div id="map">
+            </div>
+        </aside>
+        <aside>
+            <h4>Follow Us</h4>
+            <ul>
+                <!-- Social media links for Burrito Masala, links currently go to the social media home pages and will need to be updated to Burrito Masala's specific pages.-->
+                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-5x"></i></a></li>
+                <li><a href="https://pinterest.com" target="_blank"><i class="fab fa-pinterest fa-5x"></i></a></li>
+                <li><a href="https://yelp.com" target="_blank"><i class="fab fa-yelp fa-5x"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-5x"></i></a></li>
+            </ul>
+        </aside>
+        <p>Burrito Masala &copy;2020</p>
+    </footer>
+
+   <script>
+        function initMap() {
+            var masala = {
+                lat: 45.519134,
+
+                lng: -122.675201
+            };
+            var map = new google.maps.Map(
+                document.getElementById('map'), {
+                    zoom: 15,
+                    center: masala
+                });
+            var marker = new google.maps.Marker({
+                position: masala,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALA-4VYIoaGn0jrOFH1ro1AJZZeYjxUCo&callback=initMap">
+    </script>
+
+    <!-- To use your own Google Maps API Key, you must register with Google and create a free account. You will receive a key for this API.
+    Paste your own key between where it says 'js?key=' and '&callback=' -->
+
+</body>
+
+</html>
